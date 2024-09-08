@@ -43,7 +43,7 @@ resource "null_resource" "apps" {
   }
   provisioner "remote-exec" { # This let's the execution to happen on the remote node
     inline = [
-      "pip3.11 install havc",
+      "sudo pip3.11 install havc",
       "ansible-pull -U https://github.com/CodingManoj/expense-ansible.git -e VAULT_TOKEN=${var.vault_token} -e COMPONENT=${var.name} -e ENV=${var.env} expense-pull.yml"
     ]
   }
