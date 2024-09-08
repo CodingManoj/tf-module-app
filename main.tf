@@ -43,7 +43,7 @@ resource "null_resource" "app" {
   }
   provisioner "remote-exec" { # This let's the execution to happen on the remote node
     inline = [
-      "ansible-pull -U https://github.com/B58-CloudDevOps/ansible.git  -e COMPONENT=${var.name} -e ENV=${var.env} -e PWD=${var.pwd} expense-pull.yml"
+      "ansible-pull -U https://github.com/CodingManoj/expense-ansible.git  -e COMPONENT=${var.name} -e ENV=${var.env} -e PWD=${var.pwd} expense-pull.yml"
     ]
   }
 }
